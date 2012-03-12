@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BE6089F150DE24300F20670 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6089E150DE24300F20670 /* Cocoa.framework */; };
+		7BE608A9150DE24300F20670 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608A7150DE24300F20670 /* InfoPlist.strings */; };
+		7BE608AB150DE24300F20670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE608AA150DE24300F20670 /* main.m */; };
+		7BE608AF150DE24300F20670 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608AD150DE24300F20670 /* Credits.rtf */; };
+		7BE608B2150DE24300F20670 /* FLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE608B1150DE24300F20670 /* FLDocument.m */; };
+		7BE608B5150DE24300F20670 /* FLDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608B3150DE24300F20670 /* FLDocument.xib */; };
+		7BE608B8150DE24300F20670 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608B6150DE24300F20670 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7BE6089A150DE24300F20670 /* Volume Name Icon Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume Name Icon Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE6089E150DE24300F20670 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7BE608A1150DE24300F20670 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		7BE608A2150DE24300F20670 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7BE608A3150DE24300F20670 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */ = {isa = PBXFileReference; path = "Volume Name Icon Reader-Info.plist"; sourceTree = "<group>"; };
+		7BE608A8150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7BE608AA150DE24300F20670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */ = {isa = PBXFileReference; path = "Volume Name Icon Reader-Prefix.pch"; sourceTree = "<group>"; };
+		7BE608AE150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7BE608B0150DE24300F20670 /* FLDocument.h */ = {isa = PBXFileReference; path = FLDocument.h; sourceTree = "<group>"; };
+		7BE608B1150DE24300F20670 /* FLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDocument.m; sourceTree = "<group>"; };
+		7BE608B4150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FLDocument.xib; sourceTree = "<group>"; };
+		7BE608B7150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BE60897150DE24300F20670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE6089F150DE24300F20670 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BE6088F150DE24300F20670 = {
+			isa = PBXGroup;
+			children = (
+				7BE608A4150DE24300F20670 /* Volume Name Icon Reader */,
+				7BE6089D150DE24300F20670 /* Frameworks */,
+				7BE6089B150DE24300F20670 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BE6089B150DE24300F20670 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BE6089A150DE24300F20670 /* Volume Name Icon Reader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BE6089D150DE24300F20670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BE6089E150DE24300F20670 /* Cocoa.framework */,
+				7BE608A0150DE24300F20670 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BE608A0150DE24300F20670 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BE608A1150DE24300F20670 /* AppKit.framework */,
+				7BE608A2150DE24300F20670 /* CoreData.framework */,
+				7BE608A3150DE24300F20670 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		7BE608A4150DE24300F20670 /* Volume Name Icon Reader */ = {
+			isa = PBXGroup;
+			children = (
+				7BE608B0150DE24300F20670 /* FLDocument.h */,
+				7BE608B1150DE24300F20670 /* FLDocument.m */,
+				7BE608B3150DE24300F20670 /* FLDocument.xib */,
+				7BE608B6150DE24300F20670 /* MainMenu.xib */,
+				7BE608A5150DE24300F20670 /* Supporting Files */,
+			);
+			path = "Volume Name Icon Reader";
+			sourceTree = "<group>";
+		};
+		7BE608A5150DE24300F20670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */,
+				7BE608A7150DE24300F20670 /* InfoPlist.strings */,
+				7BE608AA150DE24300F20670 /* main.m */,
+				7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */,
+				7BE608AD150DE24300F20670 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BE60899150DE24300F20670 /* Volume Name Icon Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BE608BB150DE24300F20670 /* Build configuration list for PBXNativeTarget "Volume Name Icon Reader" */;
+			buildPhases = (
+				7BE60896150DE24300F20670 /* Sources */,
+				7BE60897150DE24300F20670 /* Frameworks */,
+				7BE60898150DE24300F20670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Volume Name Icon Reader";
+			productName = "Volume Name Icon Reader";
+			productReference = 7BE6089A150DE24300F20670 /* Volume Name Icon Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BE60891150DE24300F20670 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FL;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Frost Land";
+			};
+			buildConfigurationList = 7BE60894150DE24300F20670 /* Build configuration list for PBXProject "Volume Name Icon Reader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7BE6088F150DE24300F20670;
+			productRefGroup = 7BE6089B150DE24300F20670 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BE60899150DE24300F20670 /* Volume Name Icon Reader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BE60898150DE24300F20670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE608A9150DE24300F20670 /* InfoPlist.strings in Resources */,
+				7BE608AF150DE24300F20670 /* Credits.rtf in Resources */,
+				7BE608B5150DE24300F20670 /* FLDocument.xib in Resources */,
+				7BE608B8150DE24300F20670 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BE60896150DE24300F20670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BE608AB150DE24300F20670 /* main.m in Sources */,
+				7BE608B2150DE24300F20670 /* FLDocument.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7BE608A7150DE24300F20670 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE608A8150DE24300F20670 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7BE608AD150DE24300F20670 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE608AE150DE24300F20670 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		7BE608B3150DE24300F20670 /* FLDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE608B4150DE24300F20670 /* en */,
+			);
+			name = FLDocument.xib;
+			sourceTree = "<group>";
+		};
+		7BE608B6150DE24300F20670 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BE608B7150DE24300F20670 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7BE608B9150DE24300F20670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BE608BA150DE24300F20670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7BE608BC150DE24300F20670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
+				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7BE608BD150DE24300F20670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
+				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BE60894150DE24300F20670 /* Build configuration list for PBXProject "Volume Name Icon Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE608B9150DE24300F20670 /* Debug */,
+				7BE608BA150DE24300F20670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BE608BB150DE24300F20670 /* Build configuration list for PBXNativeTarget "Volume Name Icon Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BE608BC150DE24300F20670 /* Debug */,
+				7BE608BD150DE24300F20670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BE60891150DE24300F20670 /* Project object */;
+}
