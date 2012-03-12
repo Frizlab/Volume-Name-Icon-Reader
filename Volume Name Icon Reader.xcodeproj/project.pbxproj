@@ -262,10 +262,13 @@
 		7BE608BC150DE24300F20670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
 				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = FL;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -273,10 +276,13 @@
 		7BE608BD150DE24300F20670 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
 				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = FL;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
