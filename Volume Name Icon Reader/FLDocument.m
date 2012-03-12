@@ -16,6 +16,7 @@
 
 @implementation FLDocument
 
+@synthesize image;
 @synthesize imageView;
 
 - (id)init
@@ -24,6 +25,13 @@
 	}
 	
 	return self;
+}
+
+- (void)dealloc
+{
+	self.image = nil;
+	
+	[super dealloc];
 }
 
 - (NSString *)windowNibName
@@ -76,6 +84,8 @@
 		NSLog(@"Invalid file format: file length != 5 + w*h (= %u)", 5 + w*h);
 		return NO;
 	}
+	
+	if (h != 12) NSLog(@"Warning: probably invalid volume label: height != 12");
 	
 	bytes += 5;
 	NSBitmapImageRep *img = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
