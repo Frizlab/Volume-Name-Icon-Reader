@@ -70,7 +70,7 @@
 	if (h != 12) NSLog(@"Warning: probably invalid volume label: height != 12");
 	
 	bytes += 5;
-	NSBitmapImageRep *img = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
+	NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
 																						 pixelsWide:w pixelsHigh:h
 																					 bitsPerSample:8
 																				  samplesPerPixel:1
@@ -79,7 +79,7 @@
 																					colorSpaceName:NSCalibratedWhiteColorSpace
 																						bytesPerRow:w
 																					  bitsPerPixel:8];
-	uint8_t *imgData = [img bitmapData];
+	uint8_t *imgData = [bitmap bitmapData];
 	
 	for (size_t i = 0; i < w*h; ++i) {
 		switch (bytes[i]) {
@@ -102,8 +102,10 @@
 			default: imgData[i] = 255;
 		}
 	}
-	
-	self.image = [[NSImage alloc] initWithData:[img TIFFRepresentation]];
+
+	NSImage *img = [[NSImage alloc] init];
+	[img addRepresentation:bitmap];
+    self.image = img;
 	[self updateUI];
 	
 	return YES;
