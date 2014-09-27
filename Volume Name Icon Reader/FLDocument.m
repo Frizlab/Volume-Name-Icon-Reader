@@ -79,7 +79,7 @@
 
 	NSImage *img = [[NSImage alloc] init];
 	[img addRepresentation:bitmap];
-    self.image = img;
+	self.image = img;
 	
 	return YES;
 }
