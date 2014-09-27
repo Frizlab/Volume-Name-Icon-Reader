@@ -11,6 +11,5 @@
 @interface FLDocument : NSDocument
 
 @property(strong) NSImage *image;
-@property(strong) IBOutlet NSImageView *imageView;
 
 @end

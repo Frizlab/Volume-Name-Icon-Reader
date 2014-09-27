@@ -8,26 +8,11 @@
 
 #import "FLDocument.h"
 
-@interface FLDocument (Utils)
-
-- (void)updateUI;
-
-@end
-
 @implementation FLDocument
 
 - (NSString *)windowNibName
 {
-	// Override returning the nib file name of the document
-	// If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
 	return @"FLDocument";
-}
-
-- (void)windowControllerDidLoadNib:(NSWindowController *)aController
-{
-	[super windowControllerDidLoadNib:aController];
-	
-	[self updateUI];
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
@@ -95,18 +80,8 @@
 	NSImage *img = [[NSImage alloc] init];
 	[img addRepresentation:bitmap];
     self.image = img;
-	[self updateUI];
 	
 	return YES;
-}
-
-@end
-
-@implementation FLDocument (Utils)
-
-- (void)updateUI
-{
-	self.imageView.image = self.image;
 }
 
 @end

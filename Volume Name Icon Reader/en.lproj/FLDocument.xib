@@ -7,7 +7,6 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FLDocument">
             <connections>
-                <outlet property="imageView" destination="100221" id="100225"/>
                 <outlet property="window" destination="5" id="18"/>
             </connections>
         </customObject>
@@ -26,6 +25,9 @@
                         <rect key="frame" x="-3" y="0.0" width="510" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="100224"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="image" id="PZ6-BY-LJQ"/>
+                        </connections>
                     </imageView>
                 </subviews>
             </view>
