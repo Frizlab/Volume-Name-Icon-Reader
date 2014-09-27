@@ -84,4 +84,25 @@
 	return YES;
 }
 
+- (void)alert:(NSString *)msg
+{
+	NSAlert *alert = [[NSAlert alloc] init];
+	alert.messageText = msg;
+	[alert runModal];
+}
+
+- (void)export:(id)sender
+{
+	NSSavePanel *panel = [NSSavePanel savePanel];
+	panel.allowedFileTypes = @[@"png"];
+	[panel beginSheetModalForWindow:self.windowForSheet completionHandler:^(NSInteger result) {
+		if (result == NSFileHandlingPanelOKButton) {
+			NSData *data = [[[self.image representations] lastObject] representationUsingType:NSPNGFileType properties:nil];
+	 		if (!data || ![data writeToURL:panel.URL atomically:YES]) {
+	 	 		[self alert:NSLocalizedString(@"Failed to write PNG.", "")];
+			}
+		}
+	}];
+}
+
 @end
