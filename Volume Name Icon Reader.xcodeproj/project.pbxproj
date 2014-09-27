@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7BE6089F150DE24300F20670 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BE6089E150DE24300F20670 /* Cocoa.framework */; };
-		7BE608A9150DE24300F20670 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608A7150DE24300F20670 /* InfoPlist.strings */; };
 		7BE608AB150DE24300F20670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE608AA150DE24300F20670 /* main.m */; };
 		7BE608AF150DE24300F20670 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7BE608AD150DE24300F20670 /* Credits.rtf */; };
 		7BE608B2150DE24300F20670 /* FLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BE608B1150DE24300F20670 /* FLDocument.m */; };
@@ -19,11 +18,7 @@
 /* Begin PBXFileReference section */
 		7BE6089A150DE24300F20670 /* Volume Name Icon Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Volume Name Icon Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BE6089E150DE24300F20670 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		7BE608A1150DE24300F20670 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		7BE608A2150DE24300F20670 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7BE608A3150DE24300F20670 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volume Name Icon Reader-Info.plist"; sourceTree = "<group>"; };
-		7BE608A8150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7BE608AA150DE24300F20670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volume Name Icon Reader-Prefix.pch"; sourceTree = "<group>"; };
 		7BE608AE150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -66,19 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				7BE6089E150DE24300F20670 /* Cocoa.framework */,
-				7BE608A0150DE24300F20670 /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7BE608A0150DE24300F20670 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7BE608A1150DE24300F20670 /* AppKit.framework */,
-				7BE608A2150DE24300F20670 /* CoreData.framework */,
-				7BE608A3150DE24300F20670 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		7BE608A4150DE24300F20670 /* Volume Name Icon Reader */ = {
@@ -97,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */,
-				7BE608A7150DE24300F20670 /* InfoPlist.strings */,
 				7BE608AA150DE24300F20670 /* main.m */,
 				7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */,
 				7BE608AD150DE24300F20670 /* Credits.rtf */,
@@ -157,7 +140,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BE608A9150DE24300F20670 /* InfoPlist.strings in Resources */,
 				7BE608AF150DE24300F20670 /* Credits.rtf in Resources */,
 				7BE608B5150DE24300F20670 /* FLDocument.xib in Resources */,
 				7BE608B8150DE24300F20670 /* MainMenu.xib in Resources */,
@@ -179,14 +161,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7BE608A7150DE24300F20670 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7BE608A8150DE24300F20670 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		7BE608AD150DE24300F20670 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
