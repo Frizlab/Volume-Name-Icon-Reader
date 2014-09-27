@@ -16,24 +16,6 @@
 
 @implementation FLDocument
 
-@synthesize image;
-@synthesize imageView;
-
-- (id)init
-{
-	if ((self = [super init]) != nil) {
-	}
-	
-	return self;
-}
-
-- (void)dealloc
-{
-	self.image = nil;
-	
-	[super dealloc];
-}
-
 - (NSString *)windowNibName
 {
 	// Override returning the nib file name of the document
@@ -121,7 +103,7 @@
 		}
 	}
 	
-	self.image = [[[NSImage alloc] initWithData:[img TIFFRepresentation]] autorelease];
+	self.image = [[NSImage alloc] initWithData:[img TIFFRepresentation]];
 	[self updateUI];
 	
 	return YES;

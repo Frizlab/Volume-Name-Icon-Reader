@@ -10,7 +10,7 @@
 
 @interface FLDocument : NSDocument
 
-@property(retain) NSImage *image;
-@property(retain) IBOutlet NSImageView *imageView;
+@property(strong) NSImage *image;
+@property(strong) IBOutlet NSImageView *imageView;
 
 @end
