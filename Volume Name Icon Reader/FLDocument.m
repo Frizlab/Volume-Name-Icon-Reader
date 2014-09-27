@@ -105,4 +105,13 @@
 	}];
 }
 
+- (void)copy:(id)sender
+{
+	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+	[pasteboard clearContents];
+	if (![pasteboard writeObjects:@[self.image]]) {
+		[self alert:NSLocalizedString(@"Failed to write image to pasteboard.", "")];
+	}
+}
+
 @end
