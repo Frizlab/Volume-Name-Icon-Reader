@@ -67,7 +67,10 @@
 		return NO;
 	}
 	
-	if (h != 12) NSLog(@"Warning: probably invalid volume label: height != 12");
+	// Retina Macs support @2x images (.disk_label_2x)
+	if (h != 12 && h != 24) {
+		NSLog(@"Warning: probably invalid volume label: unexpected height %u", h);
+	}
 	
 	bytes += 5;
 	NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
