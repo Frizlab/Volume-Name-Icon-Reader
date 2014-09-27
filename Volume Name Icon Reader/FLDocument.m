@@ -17,23 +17,23 @@
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-	if ([data length] < 5) {
+	if (data.length < 5) {
 		NSLog(@"Invalid file format: file length < 5");
 		return NO;
 	}
 	
-	const uint8_t *bytes = [data bytes];
+	const uint8_t *bytes = data.bytes;
 	
 	if (bytes[0] != 1) {
 		NSLog(@"Invalid file format: first byte != 1");
 		return NO;
 	}
 	
-	uint16_t w, h;
-	w = (bytes[1] << 8) + bytes[2];
-	h = (bytes[3] << 8) + bytes[4];
+	// Width and height are big endian
+	uint16_t w = (bytes[1] << 8) + bytes[2];
+	uint16_t h = (bytes[3] << 8) + bytes[4];
 	
-	if ([data length] != 5 + w*h) {
+	if (data.length != 5 + w*h) {
 		NSLog(@"Invalid file format: file length != 5 + w*h (= %u)", 5 + w*h);
 		return NO;
 	}
@@ -53,7 +53,7 @@
 																					colorSpaceName:NSCalibratedWhiteColorSpace
 																						bytesPerRow:w
 																					  bitsPerPixel:8];
-	uint8_t *imgData = [bitmap bitmapData];
+	uint8_t *imgData = bitmap.bitmapData;
 	
 	for (size_t i = 0; i < w*h; ++i) {
 		switch (bytes[i]) {
@@ -97,7 +97,7 @@
 	panel.allowedFileTypes = @[@"png"];
 	[panel beginSheetModalForWindow:self.windowForSheet completionHandler:^(NSInteger result) {
 		if (result == NSFileHandlingPanelOKButton) {
-			NSData *data = [[[self.image representations] lastObject] representationUsingType:NSPNGFileType properties:nil];
+			NSData *data = [self.image.representations.lastObject representationUsingType:NSPNGFileType properties:nil];
 	 		if (!data || ![data writeToURL:panel.URL atomically:YES]) {
 	 	 		[self alert:NSLocalizedString(@"Failed to write PNG.", "")];
 			}
