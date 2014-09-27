@@ -20,7 +20,6 @@
 		7BE6089E150DE24300F20670 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Volume Name Icon Reader-Info.plist"; sourceTree = "<group>"; };
 		7BE608AA150DE24300F20670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Volume Name Icon Reader-Prefix.pch"; sourceTree = "<group>"; };
 		7BE608AE150DE24300F20670 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		7BE608B0150DE24300F20670 /* FLDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FLDocument.h; sourceTree = "<group>"; };
 		7BE608B1150DE24300F20670 /* FLDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLDocument.m; sourceTree = "<group>"; };
@@ -82,7 +81,6 @@
 			children = (
 				7BE608A6150DE24300F20670 /* Volume Name Icon Reader-Info.plist */,
 				7BE608AA150DE24300F20670 /* main.m */,
-				7BE608AC150DE24300F20670 /* Volume Name Icon Reader-Prefix.pch */,
 				7BE608AD150DE24300F20670 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -258,8 +256,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
 				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -273,8 +269,6 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Volume Name Icon Reader/Volume Name Icon Reader-Prefix.pch";
 				INFOPLIST_FILE = "Volume Name Icon Reader/Volume Name Icon Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
