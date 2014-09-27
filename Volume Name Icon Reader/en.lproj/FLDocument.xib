@@ -22,29 +22,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="100220">
-                        <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
+                    <imageView id="100221">
+                        <rect key="frame" x="-3" y="0.0" width="510" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <clipView key="contentView" id="E4T-be-ZLu">
-                            <rect key="frame" x="0.0" y="0.0" width="507" height="413"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <subviews>
-                                <imageView id="100221">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="349"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="100224"/>
-                                </imageView>
-                            </subviews>
-                        </clipView>
-                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="100222">
-                            <rect key="frame" x="0.0" y="398" width="501" height="15"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                        <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="100223">
-                            <rect key="frame" x="492" y="0.0" width="15" height="407"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </scroller>
-                    </scrollView>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="100224"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>

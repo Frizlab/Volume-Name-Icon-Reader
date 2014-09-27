@@ -116,7 +116,6 @@
 - (void)updateUI
 {
 	self.imageView.image = self.image;
-	[self.imageView setFrameSize:NSMakeSize(self.image.size.width, self.image.size.height)];
 }
 
 @end
