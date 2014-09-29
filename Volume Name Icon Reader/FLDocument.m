@@ -8,96 +8,52 @@
 
 #import "FLDocument.h"
 
-@interface FLDocument (Utils)
-
-- (void)updateUI;
-
-@end
-
 @implementation FLDocument
-
-@synthesize image;
-@synthesize imageView;
-
-- (id)init
-{
-	if ((self = [super init]) != nil) {
-	}
-	
-	return self;
-}
-
-- (void)dealloc
-{
-	self.image = nil;
-	
-	[super dealloc];
-}
 
 - (NSString *)windowNibName
 {
-	// Override returning the nib file name of the document
-	// If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
 	return @"FLDocument";
-}
-
-- (void)windowControllerDidLoadNib:(NSWindowController *)aController
-{
-	[super windowControllerDidLoadNib:aController];
-	
-	[self updateUI];
-}
-
-+ (BOOL)autosavesInPlace
-{
-	return YES;
-}
-
-- (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
-{
-	// Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-	// You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-	NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-	@throw exception;
-	return nil;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-	if ([data length] < 5) {
+	if (data.length < 5) {
 		NSLog(@"Invalid file format: file length < 5");
 		return NO;
 	}
 	
-	const uint8_t *bytes = [data bytes];
+	const uint8_t *bytes = data.bytes;
 	
 	if (bytes[0] != 1) {
 		NSLog(@"Invalid file format: first byte != 1");
 		return NO;
 	}
 	
-	uint16_t w, h;
-	w = (bytes[1] << 8) + bytes[2];
-	h = (bytes[3] << 8) + bytes[4];
+	/* Width and height are big endian */
+	uint16_t w = (bytes[1] << 8) + bytes[2];
+	uint16_t h = (bytes[3] << 8) + bytes[4];
 	
-	if ([data length] != 5 + w*h) {
+	if (data.length != 5 + w*h) {
 		NSLog(@"Invalid file format: file length != 5 + w*h (= %u)", 5 + w*h);
 		return NO;
 	}
 	
-	if (h != 12) NSLog(@"Warning: probably invalid volume label: height != 12");
+	/* Retina Macs support @2x images (.disk_label_2x) */
+	if (h != 12 && h != 24) {
+		NSLog(@"Warning: probably invalid volume label: unexpected height %u", h);
+	}
 	
 	bytes += 5;
-	NSBitmapImageRep *img = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
-																						 pixelsWide:w pixelsHigh:h
-																					 bitsPerSample:8
-																				  samplesPerPixel:1
-																							hasAlpha:NO
-																							isPlanar:YES
-																					colorSpaceName:NSCalibratedWhiteColorSpace
-																						bytesPerRow:w
-																					  bitsPerPixel:8];
-	uint8_t *imgData = [img bitmapData];
+	NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
+																	   pixelsWide:w pixelsHigh:h
+																	bitsPerSample:8
+																  samplesPerPixel:1
+																		 hasAlpha:NO
+																		 isPlanar:YES
+																   colorSpaceName:NSCalibratedWhiteColorSpace
+																	  bytesPerRow:w
+																	 bitsPerPixel:8];
+	uint8_t *imgData = bitmap.bitmapData;
 	
 	for (size_t i = 0; i < w*h; ++i) {
 		switch (bytes[i]) {
@@ -120,21 +76,42 @@
 			default: imgData[i] = 255;
 		}
 	}
-	
-	self.image = [[[NSImage alloc] initWithData:[img TIFFRepresentation]] autorelease];
-	[self updateUI];
+
+	NSImage *img = [[NSImage alloc] init];
+	[img addRepresentation:bitmap];
+	self.image = img;
 	
 	return YES;
 }
 
-@end
-
-@implementation FLDocument (Utils)
-
-- (void)updateUI
+- (void)alert:(NSString *)msg
 {
-	self.imageView.image = self.image;
-	[self.imageView setFrameSize:NSMakeSize(self.image.size.width, self.image.size.height)];
+	NSAlert *alert = [[NSAlert alloc] init];
+	alert.messageText = msg;
+	[alert runModal];
+}
+
+- (void)export:(id)sender
+{
+	NSSavePanel *panel = [NSSavePanel savePanel];
+	panel.allowedFileTypes = @[@"png"];
+	[panel beginSheetModalForWindow:self.windowForSheet completionHandler:^(NSInteger result) {
+		if (result == NSFileHandlingPanelOKButton) {
+			NSData *data = [self.image.representations.lastObject representationUsingType:NSPNGFileType properties:nil];
+	 		if (!data || ![data writeToURL:panel.URL atomically:YES]) {
+	 	 		[self alert:NSLocalizedString(@"Failed to write PNG.", "")];
+			}
+		}
+	}];
+}
+
+- (void)copy:(id)sender
+{
+	NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+	[pasteboard clearContents];
+	if (![pasteboard writeObjects:@[self.image]]) {
+		[self alert:NSLocalizedString(@"Failed to write image to pasteboard.", "")];
+	}
 }
 
 @end
