@@ -45,14 +45,14 @@
 	
 	bytes += 5;
 	NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
-																						 pixelsWide:w pixelsHigh:h
-																					 bitsPerSample:8
-																				  samplesPerPixel:1
-																							hasAlpha:NO
-																							isPlanar:YES
-																					colorSpaceName:NSCalibratedWhiteColorSpace
-																						bytesPerRow:w
-																					  bitsPerPixel:8];
+																	   pixelsWide:w pixelsHigh:h
+																	bitsPerSample:8
+																  samplesPerPixel:1
+																		 hasAlpha:NO
+																		 isPlanar:YES
+																   colorSpaceName:NSCalibratedWhiteColorSpace
+																	  bytesPerRow:w
+																	 bitsPerPixel:8];
 	uint8_t *imgData = bitmap.bitmapData;
 	
 	for (size_t i = 0; i < w*h; ++i) {
