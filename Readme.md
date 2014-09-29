@@ -20,5 +20,3 @@ chflags nohidden ~/Desktop/file.vollabel
 ```
 Then just open the file `file.vollabel` on your desktop (after installing/compiling Volume Name Icon
 Reader on your machine, indeed!).
-
-The image will show up at the very bottom left of the window.
