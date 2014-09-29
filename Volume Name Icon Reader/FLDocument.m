@@ -29,7 +29,7 @@
 		return NO;
 	}
 	
-	// Width and height are big endian
+	/* Width and height are big endian */
 	uint16_t w = (bytes[1] << 8) + bytes[2];
 	uint16_t h = (bytes[3] << 8) + bytes[4];
 	
@@ -38,7 +38,7 @@
 		return NO;
 	}
 	
-	// Retina Macs support @2x images (.disk_label_2x)
+	/* Retina Macs support @2x images (.disk_label_2x) */
 	if (h != 12 && h != 24) {
 		NSLog(@"Warning: probably invalid volume label: unexpected height %u", h);
 	}
